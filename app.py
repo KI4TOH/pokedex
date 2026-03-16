@@ -10,5 +10,5 @@ def main():
         pokedex = json.load(f)
     return render_template("index.html", pokemons = pokedex)
 
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
