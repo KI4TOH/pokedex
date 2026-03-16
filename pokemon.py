@@ -1,6 +1,6 @@
 import json
 
-class pokemon:
+class Pokemon:
     def __init__(self, dados):
         self.name = dados['name']
         self.description = dados['description']
@@ -30,7 +30,7 @@ class pokemon:
         if self.name not in pokedex:
             pokedex[self.name] = self.to_json()
 
-        print(f"{self.name} foi adicionado na pokedex")
+        # print(f"{self.name} foi adicionado na pokedex")
 
     def display(self):
         if pokedex[f"{self.name}"]:
