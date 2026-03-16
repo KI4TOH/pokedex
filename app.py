@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify
 import json
+import pokemon
 
 app = Flask(__name__)
 
@@ -16,6 +17,16 @@ def send_data():
     with open("pokedex.json", "r", encoding="utf-8") as f:
         pokedex = json.load(f)
     return pokedex
+
+@app.route("/data/<pokemon_name>")
+def search_pokemon(pokemon_name):
+    with open("pokedex.json", "r", encoding="utf-8") as f:
+        pokedex = json.load(f)
+
+    if pokedex[pokemon_name]:
+        return pokedex[pokemon_name]
+    else:
+        return jsonify({"erro": "Pokemon não existe"}), 404
 
 # if __name__ == '__main__':
 #     app.run()
