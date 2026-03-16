@@ -10,5 +10,12 @@ def main():
         pokedex = json.load(f)
     return render_template("index.html", pokemons = pokedex)
 
+@app.route("/data/pokedex")
+def send_data():
+    pokedex = {}
+    with open("pokedex.json", "r", encoding="utf-8") as f:
+        pokedex = json.load(f)
+    return pokedex
+
 # if __name__ == '__main__':
 #     app.run()
