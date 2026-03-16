@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Pokedex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Minha Pokédex</h1>
+    <div class="pokedex-container">
+        {% for nome, info in pokemons.items() %}
+        <div class="pokemon-card">
+            <h2>{{ info.name }}</h2>
+            <p>{{ info.description }}</p>
+            <span>Tipo: {{ info.type }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

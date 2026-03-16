@@ -1,0 +1,68 @@
+{
+    "Bulbasaur": {
+        "name": "Bulbasaur",
+        "description": "Durante algum tempo após o nascimento, utiliza os nutrientes contidos na semente em suas costas para crescer.",
+        "height": 0.7,
+        "weight": 6.9,
+        "category": "Seed",
+        "skills": "Overgrow",
+        "sex": [
+            "H",
+            "M"
+        ],
+        "type": [
+            "Plant",
+            "Poison"
+        ],
+        "weakness": [
+            "Fire",
+            "Ice",
+            "Flying",
+            "Psychic"
+        ]
+    },
+    "Ivysaur": {
+        "name": "Ivysaur",
+        "description": "Quanto mais luz solar Ivysaur recebe, mais força surge dentro dele, permitindo que o broto em suas costas cresça.",
+        "height": 1.0,
+        "weight": 13.0,
+        "category": "Seed",
+        "skills": "Overgrow",
+        "sex": [
+            "H",
+            "M"
+        ],
+        "type": [
+            "Plant",
+            "Poison"
+        ],
+        "weakness": [
+            "Fire",
+            "Ice",
+            "Flying",
+            "Psychic"
+        ]
+    },
+    "Venusaur": {
+        "name": "Venusaur",
+        "description": "Enquanto se banha ao sol, consegue converter a luz em energia. Consequentemente, é mais potente no verão.",
+        "height": 2.0,
+        "weight": 100.0,
+        "category": "Seed",
+        "skills": "Overgrow",
+        "sex": [
+            "H",
+            "M"
+        ],
+        "type": [
+            "Plant",
+            "Poison"
+        ],
+        "weakness": [
+            "Fire",
+            "Ice",
+            "Flying",
+            "Psychic"
+        ]
+    }
+}
