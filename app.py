@@ -46,14 +46,13 @@ def add_in_pokedex():
     if not data:
         return jsonify({"erro": "deu merda filho"}), 400
     
-    pokedex = {}
     #abrir a pokedex
     with open("pokedex.json", "r", encoding="utf-8") as check:
         pokedex = json.load(check)
 
     bixo = pokemon.Pokemon(data)
 
-    bixo.add_in_pokedex()
+    bixo.add_in_pokedex(pokedex)
 
     with open("pokedex.json", "w", encoding="utf-8") as f:
         json.dump(pokedex, f, indent=4, ensure_ascii=False)

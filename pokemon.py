@@ -25,10 +25,10 @@ class Pokemon:
             "weakness": self.weakness
         }
 
-    def add_in_pokedex(self):
+    def add_in_pokedex(self, pokedex_name):
         #Estudar dicionário e conjuntos para validar os dados de "pokemon"
-        if self.name not in pokedex:
-            pokedex[self.name] = self.to_json()
+        if self.name not in pokedex_name:
+            pokedex_name[self.name] = self.to_json()
 
         # print(f"{self.name} foi adicionado na pokedex")
 
