@@ -29,7 +29,7 @@ class navigation:
     #     print("None")
 
 
-with open("pokedex/pokedex.json", "r", encoding="utf-8") as check:
+with open("pokedex.json", "r", encoding="utf-8") as check:
     pokedex = json.load(check)
 
 nav = navigation(pokedex)

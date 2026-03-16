@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def main():
     pokedex = {}
-    with open("pokedex/pokedex.json", "r", encoding="utf-8") as f:
+    with open("pokedex.json", "r", encoding="utf-8") as f:
         pokedex = json.load(f)
     return render_template("index.html", pokemons = pokedex)
 

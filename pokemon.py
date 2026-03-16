@@ -39,14 +39,14 @@ class pokemon:
             print("Pokemon não encontrado")
 
 
-with open("pokedex/pokedex.json", "r", encoding="utf-8") as check:
+with open("pokedex.json", "r", encoding="utf-8") as check:
     pokedex = json.load(check)
 
-venusaur = pokemon({"name": "Venusaur", "description": "Enquanto se banha ao sol, consegue converter a luz em energia. Consequentemente, é mais potente no verão.", "height": 2.0, "weight": 100.0, "category": "Seed", "skills": "Overgrow", "sex": ["H", "M"], "type": ["Plant", "Poison"], "weakness": ["Fire", "Ice", "Flying", "Psychic"]})
+# venusaur = pokemon({"name": "Venusaur", "description": "Enquanto se banha ao sol, consegue converter a luz em energia. Consequentemente, é mais potente no verão.", "height": 2.0, "weight": 100.0, "category": "Seed", "skills": "Overgrow", "sex": ["H", "M"], "type": ["Plant", "Poison"], "weakness": ["Fire", "Ice", "Flying", "Psychic"]})
 
-venusaur.add_in_pokedex()
+# venusaur.add_in_pokedex()
 # bulbasaur.display()
 
 
-with open("pokedex/pokedex.json", "w", encoding="utf-8") as f:
+with open("pokedex.json", "w", encoding="utf-8") as f:
     json.dump(pokedex, f, indent=4, ensure_ascii=False)
