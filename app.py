@@ -1,7 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 import json
 import navigation
-import pokemon
+import random
+# import pokemon
+
 
 app = Flask(__name__)
 
@@ -38,28 +40,38 @@ def navig():
 
     return jsonify(nav.to_list())
 
+@app.route("/choice")
+def choice():
+    with open("pokedex", "r", encoding="utf-8") as f:
+        pokedex = json.load(f)
+    nav = navigation.Navigation(pokedex)
+    nav = nav.to_list()
 
-@app.route("/data/send", methods=['POST'])
-def add_in_pokedex():
-    data = request.get_json()
+    poks = random.choices(nav, k=5)
 
-    if not data:
-        return jsonify({"erro": "deu merda filho"}), 400
+    return jsonify(poks)
+
+# @app.route("/data/send", methods=['POST'])
+# def add_in_pokedex():
+#     data = request.get_json()
+
+#     if not data:
+#         return jsonify({"erro": "deu merda filho"}), 400
     
-    #abrir a pokedex
-    with open("pokedex.json", "r", encoding="utf-8") as check:
-        pokedex = json.load(check)
+#     #abrir a pokedex
+#     with open("pokedex.json", "r", encoding="utf-8") as check:
+#         pokedex = json.load(check)
 
-    bixo = pokemon.Pokemon(data)
+#     bixo = pokemon.Pokemon(data)
 
-    bixo.add_in_pokedex(pokedex)
+#     bixo.add_in_pokedex(pokedex)
 
-    with open("pokedex.json", "w", encoding="utf-8") as f:
-        json.dump(pokedex, f, indent=4, ensure_ascii=False)
+#     with open("pokedex.json", "w", encoding="utf-8") as f:
+#         json.dump(pokedex, f, indent=4, ensure_ascii=False)
     
-    # Processa os dados (exemplo)
+#     # Processa os dados (exemplo)
     
-    return jsonify({"mensagem": f"Pokemon {bixo.name} adicionado!"}), 201
+#     return jsonify({"mensagem": f"Pokemon {bixo.name} adicionado!"}), 201
 
 # if __name__ == '__main__':
 #     app.run()

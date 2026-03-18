@@ -1,28 +1,31 @@
 import json
+import requests
 
 class Pokemon:
     def __init__(self, dados):
         self.name = dados['name']
-        self.description = dados['description']
+        # self.description = dados['description']
         self.height = dados['height'] #ex: 0.7 m - float
         self.weight = dados['weight'] #ex: 6.7 kg - float
-        self.category = dados['category'] #ex: seed - string
-        self.skills = dados['skills'] #ex: Overgrow - string
-        self.sex = dados['sex'] #M ou H - string
+        # self.category = dados['category'] #ex: seed - string
+        # self.skills = dados['skills'] #ex: Overgrow - string
+        # self.sex = dados['sex'] #M ou H - string
         self.type = dados['type'] #ex: Plant, poison - string - list
-        self.weakness = dados['weakness'] #ex: Fire, ice - string - list
+        self.url = dados['url']
+        # self.weakness = dados['weakness'] #ex: Fire, ice - string - list
         
     def to_json(self):
         return {
             "name": self.name,
-            "description": self.description,
+            # "description": self.description,
             "height": self.height,
             "weight": self.weight,
-            "category": self.category,
-            "skills": self.skills,
-            "sex": self.sex,
+            # "category": self.category,
+            # "skills": self.skills,
+            # "sex": self.sex,
             "type": self.type,
-            "weakness": self.weakness
+            "url": self.url
+            # "weakness": self.weakness
         }
 
     def add_in_pokedex(self, pokedex_name):
@@ -34,18 +37,34 @@ class Pokemon:
 
     def display(self):
         if pokedex[f"{self.name}"]:
-            print(f"Nome: {self.name}\nDescricao: {self.description}\nAltura: {self.height} m\nPeso: {self.weight} kg\nCategoria: {self.category}")
+            print(f"Nome: {self.name}\n\nAltura: {self.height} m\nPeso: {self.weight} kg")
         else:
             print("Pokemon não encontrado")
 
+pokedex = {}
 
 with open("pokedex.json", "r", encoding="utf-8") as check:
     pokedex = json.load(check)
 
-# venusaur = pokemon({"name": "Venusaur", "description": "Enquanto se banha ao sol, consegue converter a luz em energia. Consequentemente, é mais potente no verão.", "height": 2.0, "weight": 100.0, "category": "Seed", "skills": "Overgrow", "sex": ["H", "M"], "type": ["Plant", "Poison"], "weakness": ["Fire", "Ice", "Flying", "Psychic"]})
+# i = 1
+
+# while i < 100:
+#     url = f"https://pokeapi.co/api/v2/pokemon/{i}"
+#     response = requests.get(url)
+#     response = response.json()
+
+#     pokemon = Pokemon({"name": response['name'], "height": response['height'], "weight":response['weight'], "type": response['types'][0]['type']['name'], "url": response['sprites']['front_default'] })
+
+#     pokemon.add_in_pokedex(pokedex)
+
+#     i += 1
+
+
+# print(pokemon)
+
+
 
 # venusaur.add_in_pokedex()
-# bulbasaur.display()
 
 
 with open("pokedex.json", "w", encoding="utf-8") as f:
