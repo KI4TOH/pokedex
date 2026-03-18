@@ -2,10 +2,13 @@ from flask import Flask, render_template, jsonify, request
 import json
 import navigation
 import random
+from flask_cors import CORS
 # import pokemon
 
-
 app = Flask(__name__)
+
+CORS(app)
+
 
 @app.route("/")
 def main():
