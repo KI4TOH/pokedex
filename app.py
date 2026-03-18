@@ -49,7 +49,7 @@ def choice():
 
     poks = random.choices(nav, k=5)
 
-    return jsonify(poks)
+    return poks
 
 # @app.route("/data/send", methods=['POST'])
 # def add_in_pokedex():
