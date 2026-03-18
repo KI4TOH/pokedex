@@ -20,7 +20,7 @@ class Navigation:
         resultado = []
         atual = self.llist.head
         while atual:
-            resultado.append(atual.data["name"])
+            resultado.append([atual.data["name"], atual.data['url']])
             atual = atual.next
         return resultado
 

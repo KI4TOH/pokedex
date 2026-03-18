@@ -42,7 +42,7 @@ def navig():
 
 @app.route("/choice")
 def choice():
-    with open("pokedex", "r", encoding="utf-8") as f:
+    with open("pokedex.json", "r", encoding="utf-8") as f:
         pokedex = json.load(f)
     nav = navigation.Navigation(pokedex)
     nav = nav.to_list()
